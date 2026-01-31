@@ -1,0 +1,62 @@
+{
+  "name": "SessionRequest",
+  "type": "object",
+  "properties": {
+    "from_user_id": {
+      "type": "string",
+      "description": "User sending the request"
+    },
+    "to_user_id": {
+      "type": "string",
+      "description": "User receiving the request"
+    },
+    "skill_listing_id": {
+      "type": "string",
+      "description": "Reference to the skill listing"
+    },
+    "message": {
+      "type": "string",
+      "description": "Initial message with request"
+    },
+    "proposed_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Proposed session date/time"
+    },
+    "duration_hours": {
+      "type": "number",
+      "default": 1,
+      "description": "Proposed duration in hours"
+    },
+    "total_credits": {
+      "type": "number",
+      "description": "Total credits for the session"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "accepted",
+        "declined",
+        "counter_proposed",
+        "cancelled",
+        "expired"
+      ],
+      "default": "pending"
+    },
+    "counter_proposed_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "decline_reason": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "from_user_id",
+    "to_user_id",
+    "skill_listing_id",
+    "proposed_date",
+    "total_credits"
+  ]
+}

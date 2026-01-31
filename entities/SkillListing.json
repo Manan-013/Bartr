@@ -1,0 +1,86 @@
+{
+  "name": "SkillListing",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "Reference to the user offering this skill"
+    },
+    "title": {
+      "type": "string",
+      "description": "Skill title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of what will be taught"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "technology",
+        "languages",
+        "music",
+        "art",
+        "business",
+        "fitness",
+        "cooking",
+        "crafts",
+        "academics",
+        "other"
+      ],
+      "description": "Skill category"
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced",
+        "expert"
+      ],
+      "description": "Teaching level"
+    },
+    "credits_per_hour": {
+      "type": "number",
+      "description": "Credit rate per hour"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Searchable tags"
+    },
+    "cover_image": {
+      "type": "string",
+      "description": "Cover image URL"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "default": false,
+      "description": "Soft delete flag"
+    },
+    "deleted_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when deleted"
+    },
+    "total_sessions": {
+      "type": "number",
+      "default": 0
+    },
+    "average_rating": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "user_id",
+    "title",
+    "category",
+    "credits_per_hour"
+  ]
+}

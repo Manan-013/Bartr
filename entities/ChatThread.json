@@ -1,0 +1,42 @@
+{
+  "name": "ChatThread",
+  "type": "object",
+  "properties": {
+    "participant_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "User IDs of participants"
+    },
+    "participant_emails": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Emails for querying"
+    },
+    "last_message": {
+      "type": "string"
+    },
+    "last_message_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "last_message_sender_id": {
+      "type": "string"
+    },
+    "unread_count_user1": {
+      "type": "number",
+      "default": 0
+    },
+    "unread_count_user2": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "participant_ids",
+    "participant_emails"
+  ]
+}

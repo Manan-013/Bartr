@@ -1,0 +1,56 @@
+{
+  "name": "CreditTransaction",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "User who owns this transaction"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "earned",
+        "spent",
+        "purchased",
+        "bonus",
+        "refund",
+        "admin_adjustment",
+        "referral"
+      ],
+      "description": "Transaction type"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Credit amount (positive or negative)"
+    },
+    "description": {
+      "type": "string",
+      "description": "Transaction description"
+    },
+    "related_session_id": {
+      "type": "string",
+      "description": "Related session if applicable"
+    },
+    "related_user_id": {
+      "type": "string",
+      "description": "Other user involved"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "session",
+        "purchase",
+        "referral",
+        "bonus",
+        "admin"
+      ],
+      "description": "Source of the transaction"
+    }
+  },
+  "required": [
+    "user_id",
+    "type",
+    "amount",
+    "description"
+  ]
+}

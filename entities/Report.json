@@ -1,0 +1,54 @@
+{
+  "name": "Report",
+  "type": "object",
+  "properties": {
+    "reporter_id": {
+      "type": "string",
+      "description": "User filing the report"
+    },
+    "reported_user_id": {
+      "type": "string",
+      "description": "User being reported"
+    },
+    "reason": {
+      "type": "string",
+      "enum": [
+        "inappropriate_behavior",
+        "spam",
+        "harassment",
+        "fraud",
+        "no_show",
+        "other"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "related_session_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "reviewing",
+        "resolved",
+        "dismissed"
+      ],
+      "default": "pending"
+    },
+    "admin_notes": {
+      "type": "string"
+    },
+    "resolved_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "reporter_id",
+    "reported_user_id",
+    "reason",
+    "description"
+  ]
+}

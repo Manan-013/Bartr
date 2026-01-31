@@ -1,0 +1,33 @@
+{
+  "name": "Wallet",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "Reference to the user"
+    },
+    "balance": {
+      "type": "number",
+      "default": 50,
+      "description": "Current credit balance"
+    },
+    "total_earned": {
+      "type": "number",
+      "default": 0,
+      "description": "Total credits earned from teaching"
+    },
+    "total_spent": {
+      "type": "number",
+      "default": 0,
+      "description": "Total credits spent on learning"
+    },
+    "total_purchased": {
+      "type": "number",
+      "default": 0,
+      "description": "Total credits purchased"
+    }
+  },
+  "required": [
+    "user_id"
+  ]
+}

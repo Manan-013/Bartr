@@ -1,0 +1,28 @@
+{
+  "name": "Referral",
+  "type": "object",
+  "properties": {
+    "referrer_user_id": {
+      "type": "string",
+      "description": "Email of the user who referred"
+    },
+    "referred_user_id": {
+      "type": "string",
+      "description": "Email of the user who was referred"
+    },
+    "rewarded": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the referral reward has been granted"
+    },
+    "reward_amount": {
+      "type": "number",
+      "default": 5,
+      "description": "Amount of credits rewarded"
+    }
+  },
+  "required": [
+    "referrer_user_id",
+    "referred_user_id"
+  ]
+}

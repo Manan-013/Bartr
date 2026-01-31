@@ -1,0 +1,40 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useAuthContext } from './AuthContext';
+import { pagesConfig } from '@/pages.config';
+
+export default function NavigationTracker() {
+    const location = useLocation();
+    const { user } = useAuthContext();
+    const { Pages, mainPage } = pagesConfig;
+    const mainPageKey = mainPage ?? Object.keys(Pages)[0];
+
+    // Log user activity when navigating to a page
+    useEffect(() => {
+        // Extract page name from pathname
+        const pathname = location.pathname;
+        let pageName;
+
+        if (pathname === '/' || pathname === '') {
+            pageName = mainPageKey;
+        } else {
+            // Remove leading slash and get the first segment
+            const pathSegment = pathname.replace(/^\//, '').split('/')[0];
+
+            // Try case-insensitive lookup in Pages config
+            const pageKeys = Object.keys(Pages);
+            const matchedKey = pageKeys.find(
+                key => key.toLowerCase() === pathSegment.toLowerCase()
+            );
+
+            pageName = matchedKey || null;
+        }
+
+        if (user && pageName) {
+            // Logging functionality would go here if needed for Firebase
+            // For now, it's removed as base44.appLogs.logUserInApp is no longer applicable.
+        }
+    }, [location, user, Pages, mainPageKey]);
+
+    return null;
+}

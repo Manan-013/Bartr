@@ -1,0 +1,45 @@
+{
+  "name": "CourseContent",
+  "type": "object",
+  "properties": {
+    "skill_listing_id": {
+      "type": "string",
+      "description": "Reference to the skill listing"
+    },
+    "session_id": {
+      "type": "string",
+      "description": "Optional reference to a specific session"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "VIDEO",
+        "PDF"
+      ],
+      "description": "Type of content"
+    },
+    "title": {
+      "type": "string",
+      "description": "Title of the content"
+    },
+    "description": {
+      "type": "string",
+      "description": "Optional description of the content"
+    },
+    "file_url": {
+      "type": "string",
+      "description": "URL to the uploaded file or video"
+    },
+    "order": {
+      "type": "number",
+      "default": 0,
+      "description": "Display order"
+    }
+  },
+  "required": [
+    "skill_listing_id",
+    "type",
+    "title",
+    "file_url"
+  ]
+}

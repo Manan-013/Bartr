@@ -1,0 +1,43 @@
+{
+  "name": "Message",
+  "type": "object",
+  "properties": {
+    "thread_id": {
+      "type": "string",
+      "description": "Reference to chat thread"
+    },
+    "sender_id": {
+      "type": "string",
+      "description": "User who sent the message"
+    },
+    "sender_email": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string",
+      "description": "Message content"
+    },
+    "message_type": {
+      "type": "string",
+      "enum": [
+        "text",
+        "system",
+        "session_request",
+        "session_update"
+      ],
+      "default": "text"
+    },
+    "is_read": {
+      "type": "boolean",
+      "default": false
+    },
+    "related_session_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "thread_id",
+    "sender_id",
+    "content"
+  ]
+}

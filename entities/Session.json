@@ -1,0 +1,88 @@
+{
+  "name": "Session",
+  "type": "object",
+  "properties": {
+    "request_id": {
+      "type": "string",
+      "description": "Reference to the original request"
+    },
+    "teacher_id": {
+      "type": "string",
+      "description": "User teaching the skill"
+    },
+    "learner_id": {
+      "type": "string",
+      "description": "User learning the skill"
+    },
+    "skill_listing_id": {
+      "type": "string",
+      "description": "Reference to the skill being taught"
+    },
+    "skill_title": {
+      "type": "string",
+      "description": "Skill title at time of booking"
+    },
+    "scheduled_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "duration_hours": {
+      "type": "number"
+    },
+    "credits_amount": {
+      "type": "number",
+      "description": "Credits for this session"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "scheduled",
+        "in_progress",
+        "completed",
+        "cancelled",
+        "no_show",
+        "disputed"
+      ],
+      "default": "scheduled"
+    },
+    "room_id": {
+      "type": "string",
+      "description": "Video call room ID"
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ended_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "teacher_notes": {
+      "type": "string"
+    },
+    "learner_notes": {
+      "type": "string"
+    },
+    "credits_transferred": {
+      "type": "boolean",
+      "default": false
+    },
+    "cancelled_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "cancelled_by_user_id": {
+      "type": "string"
+    },
+    "cancel_reason": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "teacher_id",
+    "learner_id",
+    "skill_listing_id",
+    "scheduled_date",
+    "credits_amount"
+  ]
+}

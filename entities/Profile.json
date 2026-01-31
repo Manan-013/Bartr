@@ -1,0 +1,111 @@
+{
+  "name": "Profile",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "Reference to the user"
+    },
+    "username": {
+      "type": "string",
+      "description": "Unique username for profile URL"
+    },
+    "bio": {
+      "type": "string",
+      "description": "User bio/description"
+    },
+    "avatar_url": {
+      "type": "string",
+      "description": "Profile picture URL"
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Languages spoken"
+    },
+    "timezone": {
+      "type": "string",
+      "description": "User timezone"
+    },
+    "availability": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "day": {
+            "type": "string"
+          },
+          "start_time": {
+            "type": "string"
+          },
+          "end_time": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Weekly availability slots"
+    },
+    "skills_to_teach": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Skills user can teach"
+    },
+    "skills_to_learn": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Skills user wants to learn"
+    },
+    "average_rating": {
+      "type": "number",
+      "description": "Average rating from reviews"
+    },
+    "total_reviews": {
+      "type": "number",
+      "default": 0
+    },
+    "total_sessions_taught": {
+      "type": "number",
+      "default": 0
+    },
+    "total_sessions_learned": {
+      "type": "number",
+      "default": 0
+    },
+    "is_verified": {
+      "type": "boolean",
+      "default": false
+    },
+    "onboarding_completed": {
+      "type": "boolean",
+      "default": false
+    },
+    "email_notifications": {
+      "type": "boolean",
+      "default": true,
+      "description": "Receive email notifications"
+    },
+    "push_notifications": {
+      "type": "boolean",
+      "default": true,
+      "description": "Receive push notifications"
+    },
+    "referral_code": {
+      "type": "string",
+      "description": "Unique referral code for this user"
+    },
+    "referred_by": {
+      "type": "string",
+      "description": "Referral code used during signup"
+    }
+  },
+  "required": [
+    "user_id",
+    "username"
+  ]
+}

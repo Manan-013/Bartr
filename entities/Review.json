@@ -1,0 +1,46 @@
+{
+  "name": "Review",
+  "type": "object",
+  "properties": {
+    "session_id": {
+      "type": "string",
+      "description": "Reference to the session"
+    },
+    "reviewer_id": {
+      "type": "string",
+      "description": "User writing the review"
+    },
+    "reviewed_user_id": {
+      "type": "string",
+      "description": "User being reviewed"
+    },
+    "skill_listing_id": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "Rating 1-5 stars"
+    },
+    "comment": {
+      "type": "string",
+      "description": "Review text"
+    },
+    "review_type": {
+      "type": "string",
+      "enum": [
+        "as_teacher",
+        "as_learner"
+      ],
+      "description": "Whether reviewing as teacher or learner"
+    }
+  },
+  "required": [
+    "session_id",
+    "reviewer_id",
+    "reviewed_user_id",
+    "rating",
+    "review_type"
+  ]
+}

@@ -1,39 +1,123 @@
-**Welcome to your Base44 project** 
+BARTR
+A Skill-Barter Platform — Learn & Teach Without Money
 
-**About**
+BARTR is a full-stack web application where users trade skills using time-based credits instead of money. Users earn credits by teaching what they know and spend credits to learn from others. The platform focuses on trust, real-time interaction, and fair exchange.
 
-View and Edit  your app on [Base44.com](http://Base44.com) 
+ Key Features
+ Skill Barter System
+Teach skills → earn credits
 
-This project contains everything you need to run your app locally.
+Learn skills → spend credits
 
-**Edit the code in your local development environment**
+Transparent credit ledger
 
-Any change pushed to the repo will also be reflected in the Base44 Builder.
+Optional paid credit packs (Stripe)
 
-**Prerequisites:** 
+ User Profiles
+Bio, language, timezone
 
-1. Clone the repository using the project's Git URL 
-2. Navigate to the project directory
-3. Install dependencies: `npm install`
-4. Create an `.env.local` file and set the right environment variables
+Skills offered (teach) & skills wanted (learn)
 
-```
-VITE_BASE44_APP_ID=your_app_id
-VITE_BASE44_APP_BASE_URL=your_backend_url
+Availability scheduling
 
-e.g.
-VITE_BASE44_APP_ID=cbef744a8545c389ef439ea6
-VITE_BASE44_APP_BASE_URL=https://my-to-do-list-81bfaad7.base44.app
-```
+Public profile with ratings & trust score
 
-Run the app: `npm run dev`
+ Skill Marketplace
+Browse skills by category, level, tags
 
-**Publish your changes**
+Smart recommendations based on skill overlap
 
-Open [Base44.com](http://Base44.com) and click on Publish.
+Teacher ratings & trust badges
 
-**Docs & Support**
+Clean, premium UI (no clutter)
 
-Documentation: [https://docs.base44.com/Integrations/Using-GitHub](https://docs.base44.com/Integrations/Using-GitHub)
+ Requests & Sessions
+Request → Accept / Decline / Reschedule flow
 
-Support: [https://app.base44.com/support](https://app.base44.com/support)
+Session lifecycle tracking
+
+Automatic credit deduction / reward
+
+Session history
+
+ Realtime Chat
+1-to-1 messaging using Socket.IO
+
+Message persistence
+
+Notification badges
+
+ Video Sessions
+Secure WebRTC video calls via LiveKit
+
+Token-based room access
+
+Join directly from session page
+
+Session auto-completion after call
+
+ Course Content (Private)
+Teachers can upload:
+
+Video lectures
+
+PDF notes
+
+Content is locked by default
+
+Unlocked only after teacher accepts request
+
+Access limited to teacher & accepted learner
+
+ Ratings & Trust System
+Mandatory post-session rating (1–5 stars)
+
+Text feedback
+
+Teacher Trust Score (0–100) based on:
+
+Average rating
+
+Completed sessions
+
+Cancellation rate
+
+Reports received
+
+Badges:
+
+Trusted Teacher
+
+Rising Mentor
+
+ Refer & Earn
+Unique referral code per user
+
+Invite friends via referral link
+
+Referrer earns +5 credits after:
+
+Signup
+
+Onboarding completion
+
+Referral credits tracked in ledger
+
+ Wallet & Payments
+Credit balance & transaction history
+
+Referral rewards visible
+
+Buy credits via Stripe (test mode)
+
+Secure webhook handling
+
+ Safety & Trust
+Report & block users
+
+Admin moderation tools
+
+Soft-deleted courses
+
+Role-based access control
+
